@@ -11,9 +11,9 @@ export interface CommandNameFunctionMap {
 export const commandNameFunctionMap: CommandNameFunctionMap = {
   jsdocTs: (s: string) => {
     let l: string[] = s.split(/\r?\n/);
-    l = l.map((line) => `* ${line}`);
+    l = l.map((line) => ` * ${line}`);
     let head = `/*\n * @sample\n * \`\`\`ts`;
-    let tail = `\n * \`\`\``;
+    let tail = `\n * \`\`\`\n *\/`;
     let body = l.join("\n");
     return [head, body, tail].join("\n");
   },
