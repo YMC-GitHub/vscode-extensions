@@ -2,7 +2,7 @@
   "name": "yors-vscode-extension-code-ts-sample",
   "displayName": "code-ts-sample",
   "description": "make code ts js-docs as sample",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "engines": {
     "vscode": "^1.87.2"
   },
