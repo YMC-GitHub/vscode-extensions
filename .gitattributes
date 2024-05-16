@@ -4,7 +4,8 @@
 *.md linguist-detectable=false
 *.py linguist-detectable=false
 *.html linguist-detectable=false
-# *.js linguist-detectable=false
+*.js linguist-detectable=false
+*.mjs linguist-detectable=false
 *.css linguist-detectable=false
 # s: set *.js and other as js file for js project
 
