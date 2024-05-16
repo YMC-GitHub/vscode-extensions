@@ -7,10 +7,6 @@ make code to jsdoc as sample and add ts to code block.
 - install:
 
 ```powershell
-# install from local vsix
-$name="vscode-extension-code-ts-sample";$org="yors";$repo="ymc-github/vscode-extensions";$version="0.1.0"
-code --install-extension ${org}-${name}-${version}.vsix
-
 # install from marketplace.visualstudio.com in cli ? do:
 code --install-extension yemiancheng.yors-vscode-extension-code-ts-sample
 ```
@@ -52,12 +48,10 @@ const wheel = (e: unknown) => {
  *   };
  *   setApi(meta.api);
  *   log(`[${api}] ${meta.description}`);
- * 
+ *
  *   ew.zoom(e as unknown as WheelEvent);
  * };
- * <canvas onWheel={wheel} />
- * 
-
+ * <canvas onWheel={wheel} />;
  * ```
  */
 ````
@@ -71,6 +65,6 @@ MIT
 ## todo
 
 - ~~publish~~
-- publish with github action
+- ~~publish with github action~~
 - move to packages as a mono repo.
 - code as rs sample (`rsdoc`)
