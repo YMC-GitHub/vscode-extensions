@@ -11,15 +11,98 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: checkout your repository
+        uses: actions/checkout@v4
+
+      - name: Get version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
+      # - name: Setup PNPM
+      #   uses: pnpm/action-setup@v3
+      #   with:
+      #     version: ^7.0
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
           node-version: 20
-      - run: yarn install
+          # cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm -r install
+
+      # - name: Build npm Packages
+      #   run: pnpm run build
+
+      - name: Compile npm Packages
+        run: pnpm -r run compile
+
+      # - name: npm publish to registry.npmjs.org
+      #   # run: npm publish --workspaces --dry-run
+      #   run: |
+      #     npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
+      #     npm publish --workspaces --dry-run
+      #   shell: bash
+      #   env:
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # # please create org and sign before publishing private pkg
+      # - name: pnpm publish to registry.npmjs.org
+      #   run: |
+      #     # pnpm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
+      #     pnpm -r publish --no-git-checks --access public
+      #   shell: bash
+      #   env:
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # # https://npm.pkg.github.com/
+      # - name: pnpm publish to npm.pkg.github.com
+      #   run: |
+      #     pnpm set registry https://npm.pkg.github.com/
+      #     pnpm -r publish --no-git-checks --dry-run
+      #   shell: bash
+      #   env:
+      #     NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # # done
+      # - name: Create github Release
+      #   uses: softprops/action-gh-release@v2
+      #   with:
+      #     body_path: README.md
+      #     # note you'll typically need to create a personal access token
+      #     # with permissions to create releases in the other repo
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+
+      # - name: Pnpm build vsx Packages
+      #   run: pnpm -r run vscode:package
+
+      # - name: Pnpm Publish to Visual Studio Marketplace dryrun
+      #   run: pnpm -r exec vsce ls
+
+      # - name: Pnpm Publish to Visual Studio Marketplace
+      #   run: pnpm -r exec vsce publish -p $VSCE_PAT
+      #   shell: bash
+      #   env:
+      #     VSCE_PAT: ${{ secrets.VS_MARKETPLACE_TOKEN }}
+
       # - name: Publish to Open VSX Registry
       #   uses: HaaLeo/publish-vscode-extension@v1
       #   with:
       #     pat: ${{ secrets.OPEN_VSX_TOKEN }}
+
+      - name: Yarn install dependencies
+        run: yarn install
+
+      - name: Yarn build npm Packages
+        run: yarn workspaces run compile
+
+      # - name: Yarn build vsx Packages
+      #   run: yarn workspaces run vscode:package --yarn
+
+      # - name: Yarn Publish to Visual Studio Marketplace
+      #   run: yarn workspaces run vscode:publish
+
       - name: Publish to Visual Studio Marketplace
         uses: HaaLeo/publish-vscode-extension@v1
         with:

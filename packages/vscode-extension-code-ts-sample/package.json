@@ -1,0 +1,56 @@
+{
+  "name": "yors-vscode-extension-code-ts-sample",
+  "displayName": "code-ts-sample",
+  "description": "make code ts js-docs as sample",
+  "version": "0.6.0",
+  "engines": {
+    "vscode": "^1.87.2"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:code-as-sample.jsdocTs"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "code-as-sample.jsdocTs",
+        "title": "jsdocTs",
+        "category": "code-as-sample"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p .",
+    "watch": "tsc -watch -p .",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test",
+    "vscode:ls": "vsce ls",
+    "vscode:package": "vsce package --yarn",
+    "vscode:publish": "vsce publish --yarn"
+
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "~18.19.31",
+    "@types/vscode": "^1.87.2"
+  },
+  "repository": {
+    "url": "git+https://github.com/ymc-github/vscode-extensions.git"
+  },
+  "bugs": {
+    "url": "git+https://github.com/ymc-github/vscode-extensions/issues"
+  },
+  "homepage": "https://github.com/ymc-github/vscode-extensions/blob/main/#readme",
+  "icon": "icon.jpg",
+  "files": [
+    "package.json",
+    "README.md",
+    "out/*"
+  ],
+  "publisher": "yemiancheng"
+}

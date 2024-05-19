@@ -1,5 +1,5 @@
 {
-  "name": "@yors/vscode-extensions",
+  "name": "yors-vscode-extensions",
   "version": "0.1.0",
   "description": "a project name vscode-extensions",
   "keywords": [
@@ -27,7 +27,8 @@
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
     "test": "vscode-test",
-    "vscode:package": "vsce package"
+    "vscode:package": "vsce package",
+    "vscode:ls": "vsce ls"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.6",
@@ -40,5 +41,8 @@
     "@vscode/vsce": "^2.26.1",
     "eslint": "^8.57.0",
     "typescript": "^5.4.5"
+  },
+  "engines": {
+    "vscode": "^1.87.2"
   }
 }
