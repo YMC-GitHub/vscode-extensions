@@ -68,3 +68,7 @@ MIT
 - ~~publish with github action~~
 - move to packages as a mono repo.
 - code as rs sample (`rsdoc`)
+
+<!-- ![](./buymeatea.png) -->
+<!-- <p><img src="./buymeatea.png" align="middle" /></p> -->
+<div align=center><img src="./buymeatea.png"></div>
