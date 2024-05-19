@@ -1,4 +1,22 @@
 {
+  "name": "@yors/vscode-extensions",
+  "version": "0.1.0",
+  "description": "a project name vscode-extensions",
+  "keywords": [
+    "artist",
+    "vscode-extensions",
+    "mono"
+  ],
+  "author": "yemiancheng <ymc.github@gmail.com> (https://github.com/ymc-github)",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "url": "git+https://github.com/ymc-github/vscode-extensions.git"
+  },
+  "bugs": {
+    "url": "git+https://github.com/ymc-github/vscode-extensions/issues"
+  },
+  "homepage": "https://github.com/ymc-github/vscode-extensions/blob/main/#readme",
   "workspaces": [
     "packages/*"
   ]
