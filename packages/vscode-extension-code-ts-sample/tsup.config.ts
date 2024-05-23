@@ -1,6 +1,6 @@
 import { defineConfig } from "tsup";
-import path from "path";
-import fs from "fs";
+// import path from "path";
+// import fs from "fs";
 import pkg from "./package.json";
 let bannerText = `/**\n * name: ${pkg.name}\n * version: v${pkg.version}\n */`;
 export default defineConfig({
