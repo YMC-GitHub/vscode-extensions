@@ -5,7 +5,7 @@ import pkg from "./package.json";
 let bannerText = `/**\n * name: ${pkg.name}\n * version: v${pkg.version}\n */`;
 export default defineConfig({
   entry: ["src/extension.ts"],
-  outDir: "dist",
+  outDir: "out",
   legacyOutput: false,
   banner: {
     js: bannerText,
@@ -18,9 +18,9 @@ export default defineConfig({
   format: ["esm", "cjs"],
   async onSuccess() {
     await fs.renameSync(
-      path.resolve(__dirname, "dist/extension.js"),
-      path.resolve(__dirname, "dist/extension.cjs")
-    );
+    //   path.resolve(__dirname, "out/extension.js"),
+    //   path.resolve(__dirname, "out/extension.cjs")
+    // );
     console.log("Build Success");
   },
 });
