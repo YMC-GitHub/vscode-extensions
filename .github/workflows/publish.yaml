@@ -29,14 +29,14 @@ jobs:
           node-version: 20
           # cache: "pnpm"
 
-      - name: Install dependencies
-        run: pnpm -r install
+      # - name: Pnpm Install dependencies
+      #   run: pnpm -r install
 
       # - name: Build npm Packages
       #   run: pnpm run build
 
-      - name: Compile npm Packages
-        run: pnpm -r run compile
+      # - name: Pnpm Compile npm Packages
+      #   run: pnpm -r run compile
 
       # - name: npm publish to registry.npmjs.org
       #   # run: npm publish --workspaces --dry-run
