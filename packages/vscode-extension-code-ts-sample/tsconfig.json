@@ -41,5 +41,5 @@
 
     "outDir": "types"
   },
-  "include": ["src","lib"]
+  "include": ["src"]
 }
