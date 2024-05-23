@@ -17,7 +17,7 @@ export default defineConfig({
   splitting: false,
   format: ["esm", "cjs"],
   async onSuccess() {
-    await fs.renameSync(
+    // await fs.renameSync(
     //   path.resolve(__dirname, "out/extension.js"),
     //   path.resolve(__dirname, "out/extension.cjs")
     // );
