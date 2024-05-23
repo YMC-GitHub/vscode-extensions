@@ -9,4 +9,9 @@ community_bridge: # Replace with a single Community Bridge project-name e.g., cl
 liberapay: # Replace with a single Liberapay username
 issuehunt: # Replace with a single IssueHunt username
 otechie: # Replace with a single Otechie username
-custom: https://raw.githubusercontent.com/ymc-github/vscode-extensions/main/buymeatea.png
+custom: https://media.githubusercontent.com/media/YMC-GitHub/vscode-extensions/main/buymeatea.png
+# for simple raw
+# https://raw.githubusercontent.com/ymc-github/vscode-extensions/main/buymeatea.png
+
+# for lfs raw
+# https://media.githubusercontent.com/media/YMC-GitHub/vscode-extensions/main/buymeatea.png
