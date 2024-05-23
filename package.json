@@ -44,5 +44,6 @@
   },
   "engines": {
     "vscode": "^1.87.2"
-  }
+  },
+  "publisher": "yemiancheng"
 }
