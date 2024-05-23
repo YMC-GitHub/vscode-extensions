@@ -66,7 +66,7 @@ MIT
 
 - ~~publish~~
 - ~~publish with github action~~
-- move to packages as a mono repo.
+- ~~transform poly repo to mono repo~~.
 - code as rs sample (`rsdoc`)
 
 <!-- ![](./buymeatea.png) -->
