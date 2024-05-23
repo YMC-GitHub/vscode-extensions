@@ -35,7 +35,7 @@ const codeFunction = async (
   }
   editor.selections.forEach(async (selection, index) => {
     const text = editor.document.getText(selection);
-    const textParts = text.split("\n");
+    // const textParts = text.split("\n");// error TS6133
     // let stringFunc;
     let replaced;
     replaced = commandNameFunctionMap[commandName](text);

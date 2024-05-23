@@ -12,7 +12,16 @@
   "activationEvents": [
     "onCommand:code-as-sample.jsdocTs"
   ],
-  "main": "./out/extension.js",
+  "main": "./dist/extension.js",
+  "module": "./dist/extension.mjs",
+  "types": "./dist/extension.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/extension.d.ts",
+      "import": "./dist/extension.mjs",
+      "require": "./dist/extension.js"
+    }
+  },
   "contributes": {
     "commands": [
       {
@@ -24,20 +33,24 @@
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p .",
-    "watch": "tsc -watch -p .",
+    "compile": "tsup",
+    "types": "tsc",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
     "test": "vscode-test",
     "vscode:ls": "vsce ls",
     "vscode:package": "vsce package --yarn",
     "vscode:publish": "vsce publish --yarn"
-
+  },
+  "peerDependencies":{
+    "vscode":"*"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.6",
     "@types/node": "~18.19.31",
-    "@types/vscode": "^1.87.2"
+    "@types/vscode": "^1.87.2",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.3"
   },
   "repository": {
     "url": "git+https://github.com/ymc-github/vscode-extensions.git"
@@ -50,7 +63,7 @@
   "files": [
     "package.json",
     "README.md",
-    "out/*"
+    "dist/*"
   ],
   "publisher": "yemiancheng"
 }
